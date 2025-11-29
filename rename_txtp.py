@@ -87,13 +87,15 @@ def rename_txtp_files(id_to_name):
             new_filename = f"{category}-{new_name}.txtp"
             
             try:
-                try:
-                    os.stat(new_filename)
-                    os.unlink(filename)
-                    print(f"  Deleted duplicate: '{filename}'")
-                except:
-                    os.rename(filename, new_filename)
-                    print(f"  Renamed: '{filename}' -> '{new_filename}'")
+                rename_num = 0
+                while True:
+                    try:
+                        os.rename(filename, new_filename)
+                        print(f"  Renamed: '{filename}' -> '{new_filename}'")
+                        break
+                    except:
+                        rename_num += 1
+                        new_filename = f"{category}-{new_name} ({rename_num}).txtp"
                 rename_count += 1
             except Exception as e:
                 print(f"  ERROR: Could not rename '{filename}'. Reason: {e}")
