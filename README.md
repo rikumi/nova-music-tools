@@ -5,5 +5,5 @@
 ## 更新步骤
 
 1. clone 仓库到 StreamingAssets/InstallResource/txtp 路径；
-2. 执行 run.bat；
+2. 执行 run.bat，得到的就是现版本相对于开服版本新增的所有音乐 .txtp 文件；
 3. 用安装好 vgmstream 插件（附带在本项目 fb2k 目录下）的 foobar2000 打开所有 .txtp 文件，全选并转换成默认的 OGG Vorbis；（oggenc2 工具附带在本项目 fb2k 目录下）。
